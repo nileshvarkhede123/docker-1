@@ -21,8 +21,8 @@ pipeline{
         }
         stage("copying index file in container"){
             steps{
-                    sh  "chmod -R 777 /root/.jenkins/workspace/docker1_q1"
-                    sh  "sudo docker cp /root/.jenkins/workspace/docker1_q1 server-1:/usr/local/apache2/htdocs/"
+                    sh  "chmod -R 777 /root/.jenkins/workspace/docker1_q2"
+                    sh  "sudo docker cp /root/.jenkins/workspace/docker1_q2 server-2:/usr/local/apache2/htdocs/"
                 }
         }
     }
