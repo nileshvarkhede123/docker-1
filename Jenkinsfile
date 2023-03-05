@@ -13,7 +13,7 @@ pipeline{
         }
         stage("creating docker container on master"){
             steps{
-                sh "sudo docker rm server-1"
+                sh "sudo docker rm server-2"
                 sh "sudo docker syetem prune -a -f"
                 sh "sudo docker run -itdp 81:80 --name server-2 httpd"
                 
@@ -21,8 +21,8 @@ pipeline{
         }
         stage("copying index file in container"){
             steps{
-                    sh  "chmod -R 777 $WORKSPACE/index.html"
-                    sh  "sudo docker cp $WORKSPACE/index.html server-2:/usr/local/apache2/htdocs/"
+                    sh  "chmod -R 777 /root/.jenkins/workspace/docker1_q1"
+                    sh  "sudo docker cp /root/.jenkins/workspace/docker1_q1 server-1:/usr/local/apache2/htdocs/"
                 }
         }
     }
