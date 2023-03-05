@@ -1,9 +1,9 @@
 pipeline{
-    agent{
+    agent any{
         label {
 		
-				label 'built-in'
-				customWorkspace '/mnt/demo'
+				label "built-in"
+				customWorkspace "/mnt/demo"
 				
 		}
     }
