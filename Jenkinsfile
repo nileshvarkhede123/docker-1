@@ -1,5 +1,11 @@
 pipeline{
     agent any
+    {
+        label {
+        label "built-in"
+        customWorkspace "/mnt/demo"
+        }
+    }
     stages{
         stage("clean workspace"){
             steps{
