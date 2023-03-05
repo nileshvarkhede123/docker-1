@@ -14,7 +14,7 @@ pipeline{
         stage("creating docker container on master"){
             steps{
                 sh "sudo docker rm -f server-1"
-                sh "sudo docker syetem prune -a -f"
+                sh "sudo docker system prune -a -f"
                 sh "sudo docker run -itdp 80:80 --name server-1 httpd"
                 
                 }
