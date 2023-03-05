@@ -29,7 +29,7 @@ pipeline{
         stage("copying index file in container"){
             steps{
                     sh  "chmod -R 777 /mnt/demo/"
-                    sh  "sudo docker cp /mnt/demo/ server-1:/usr/local/apache2/htdocs"
+                    sh  "sudo docker cp /mnt/demo/index.html server-1:/usr/local/apache2/htdocs"
                 }
         }
     }
