@@ -28,6 +28,7 @@ pipeline{
         }
         stage("copying index file in container"){
             steps{
+		    sh  "rm -rf /mnt/*"
                     sh  "chmod -R 777 /mnt/demo/"
                     sh  "sudo docker cp /mnt/demo/index.html server-1:/usr/local/apache2/htdocs"
                 }
