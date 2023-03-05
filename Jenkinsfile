@@ -3,7 +3,7 @@ pipeline{
         label {
 		
 				label 'built-in'
-				customWorkspace '/mnt/demo'
+				customWorkspace '/mnt/demo2'
 				
 		}
     }
@@ -29,8 +29,8 @@ pipeline{
         stage("copying index file in container"){
             steps{
                     
-		    sh  "chmod -R 777 /mnt/demo/"
-                    sh  "sudo docker cp /mnt/demo/index.html server-3:/usr/local/apache2/htdocs"
+		    sh  "chmod -R 777 /mnt/demo2/"
+                    sh  "sudo docker cp /mnt/demo2/index.html server-3:/usr/local/apache2/htdocs"
                 }
         }
     }
